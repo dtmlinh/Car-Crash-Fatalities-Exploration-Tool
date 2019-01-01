@@ -1,7 +1,7 @@
 library(shiny)
 library(gridExtra)
 library(ggplot2)
-library(kobe)
+#library(kobe)
 library(ggmap)
 library(png)
 library(grid)
