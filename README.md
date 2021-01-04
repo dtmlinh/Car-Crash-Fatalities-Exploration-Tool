@@ -38,42 +38,35 @@ http://www.poi-factory.com/poifiles
 
 ## Usage
 ## Online Access
-The program was packaged and uploaded online to be accessed [here](https://us-energy-consumption.herokuapp.com/).
+The program was packaged and uploaded onto https://www.shinyapps.io/ to be accessed [here](https://dtmlinh.shinyapps.io/car-crash-fatalities-exploration-tool/) (Flash needs to be enabled to run properly).
 
 The goal was not only to investigate the factors contributing to the number of car crash fatalities, but also to make such information easily accessible to everyone. Someone might not be interested in reading an academic paper about car crash fatalities with tons of statistical regressions and inferences, but they might be interested in viewing animated charts, graphs, and maps that convey similar information. As a result, this project aims to create an interactive UI that allows people to explore the questions of their own interests. Utilizing the Shiny library in R, 3 simple interactive applications were created for these purposes.
 
 1.	The first application allows you to select a state in the U.S. and observe the number of car crash fatalities, poverty levels, median household income levels, population, and median commute time, as well as their relationships with each other over time (2003 – 2011) via motion charts. 
 
-![alt-text](image/app1.png)
+![alt-text](app1.gif)
 
 2. The second application also allows you to select a state in the U.S. and observe the correlations between the average car crash fatalities percent by county and their average distance to the closest school, hospital, bridge, fuel station, mall, speed and red-light camera, historical site, and intersection.
 
-![alt-text](image/app2.png)
+![alt-text](app2.gif)
 
 3.	The third application allows you to type in any location in the U.S. of your interest. It then will display a density map that shows the densities of car crash fatalities, schools, hospitals, bridges, fuel stations, malls, speed and red-light cameras, historical sites, and intersections surrounding your location of interest.
 
-![alt-text](image/app3.png)
+![alt-text](app3.gif)
 
 ## Local Access
 ```
 library(shiny)
-runApp("~/Car Crash Fatalities Exploration Tool/")
+runApp("~/Car-Crash-Fatalities-Exploration-Tool/")
 ```
 
 ## Structure of the software
 
-1. Data collecting and schema building scripts:
-    - `webscraper.py`: Scrapes 2017 data from EIA website on on [energy consumption by source] (https://www.eia.gov/state/seds/seds-data-complete.php?sid=US). The script crawls the index page and retrieves the datasets of interest for year 2017. The relevant datasets are then saved in the “data” folder.
-    - `pull_api.py`: Leverages EIA’s API to retrieve trend data for a longer time period (1960 - 2017), which is not available in a web page format. The relevant datasets are saved in the “data” folder.
-    - `db.sql`: sql file that converts data retrieved from web scraping and API into a sql3.lite database.
+1. Data:
+    - folder `data` contains both raw data and processed data. 
 
-2. Data visualization/display scripts:
-    - `make_2017_graph.py`: Python script that creates graphs showing the total energy consumption pattern by state in 2017. All the graphs are created and saved in the “static/graphs” folder. When a user selects a state, we’ll find the correct path of the state’s graph to display.
-    - `make_1960_2017_graph.py`: Python script to create graphs showing the total energy consumption pattern by state for 1960-2017. All the graphs are created and saved in the “static/graphs” folder. When a user selects a state, we’ll find the correct path of the state’s graph to display.
-    - `make_2017_table.py`: Python script that queries data on the total energy consumption pattern by state in 2017 from the database we created above. Convert the data into a formatted table to be displayed when a user selects a state.
+2. Data collecting and processing codes:
+    - folder `R_codes` contains codes to process raw data and store processed data in folder `data`.
 
-3. Django scripts: 
-Following the standard structure of a Django application, there are 3 main folders:
-    - `search` folder contains html template and codes to display the correct visualizations selected by the users.
-    - `static` folder contains css style and graphs generated from our data visualization scripts (to be displayed as static components in css structure).
-    - `ui` folder contains Django default setup and scripts.
+3. Shiny app scripts: `ui.R`, `server.R`
+    
