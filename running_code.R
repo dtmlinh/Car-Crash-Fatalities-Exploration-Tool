@@ -1,2 +1,2 @@
 library(shiny)
-runApp("~/Documents/Dropbox/Data Science_Project/shinyapp")
+runApp("Car-Crash-Fatalities-Exploration-Tool")
