@@ -20,16 +20,16 @@ Generally, I will use the number of car crash fatalities as my dependent variabl
 
 Dependent variables: 
 
-•	Number of car crash fatalities by state and county (2003 – 2011):
+•	Number of car crash fatalities by state and county:
 http://www.nhtsa.gov/FARS. 
 
 Independent variables:
 
-•	Median commute time by state and county (2011):
+•	Median commute time by state and county:
 http://www.indexmundi.com/facts/united-states/quick-facts/all-states/average-commute-time#map 
 (Source: American Community Survey)
 
-•	Poverty and income levels by state and county (2003 – 2011):
+•	Poverty and income levels by state and county:
 http://www.census.gov/did/www/saipe/data/statecounty/data/index.html 
 (Source: Census Bureau).
 
@@ -42,7 +42,7 @@ The program was packaged and uploaded onto https://www.shinyapps.io/ to be acces
 
 The goal was not only to investigate the factors contributing to the number of car crash fatalities, but also to make such information easily accessible to everyone. Someone might not be interested in reading an academic paper about car crash fatalities with tons of statistical regressions and inferences, but they might be interested in viewing animated charts, graphs, and maps that convey similar information. As a result, this project aims to create an interactive UI that allows people to explore the questions of their own interests. Utilizing the Shiny library in R, 3 simple interactive applications were created for these purposes.
 
-1.	The first application allows you to select a state in the U.S. and observe the number of car crash fatalities, poverty levels, median household income levels, population, and median commute time, as well as their relationships with each other over time (2003 – 2011) via motion charts. 
+1.	The first application allows you to select a state in the U.S. and observe the number of car crash fatalities, poverty levels, median household income levels, population, and median commute time, as well as their relationships with each other over time via motion charts. 
 
 ![alt-text](app1.gif)
 
